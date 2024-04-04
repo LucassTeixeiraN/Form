@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <main id="login-page">
+        <h1 class="page-title">Login</h1>
+        <div id="input-container">
+            <span class="input-box">
+                <label>Email:</label>
+                <input id="email-input" type="text" placeholder="e.g. name@email.com">
+                <p class="error-text" id="log-email-error">Invalid email</p>
+            </span>
+            <span class="input-box">
+                <label>Password:</label>
+                <input id="password-input" type="password">
+                <p class="error-text" id="log-pw-error">Invalid password</p>
+            </span>
+        </div>
+        <div id="btn-container">
+            <button id="login-button" class="main-btns" onclick="login()">Login</button>
+            <span>
+                <button id="forgot-pw-btn" class="simple-btns" onclick="forgot()">Forgot the password?</button>
+                <button id="register-btn" class="simple-btns" onclick="toRegisterPage()">Create an account</button>
+            </span>
+        </div>
+    </main>
+<!-- ------------------------------------------------------------------------------------------------ -->
+    <main id="forgot-password-page">
+        <h1 class="page-title">Password Recover</h1>
+        <span>
+            <div class="input-box">
+                <label for="email-pw-recover-input">Emai:</label>
+                <input type="text" id="email-pw-recover-input">
+            </div>
+            <button class="main-btns">Send the email</button>
+        </span>
+        <p>Check your email to create a new password</p>
+        <button class="simple-btns" onclick="toLoginPage()">Back to login page</button>
+    </main>
+<!-- ------------------------------------------------------------------------------------------------ -->
+<main id="create-account-page">
+    <h1 class="page-title">Create an account</h1>
+    <div id="input-container">
+        <span class="input-box">
+            <label>Name:</label>
+            <input id="reg-name-input" type="text" placeholder="e.g. Name Lastname">
+        </span>
+        <span class="input-box">
+            <label>Email:</label>
+            <input id="reg-email-input" type="text" placeholder="e.g. name@email.com">
+            <p class="error-text" id="reg-email-error">Invalid email.</p>
+        </span>
+        <span class="input-box">
+            <label>Password:</label>
+            <input id="reg-pw-input" type="password" >
+            <p class="error-text" id="reg-pw-error">You password must contain:</p>
+            <p class="error-text" id="digit-error">-At least 8 digits</p>
+            <p class="error-text" id="upp-chrc-error">-A character between A-Z</p>
+            <p class="error-text" id="low-chrc-error">-A character between a-z</p>
+            <p class="error-text" id="numb-error">-A number</p>
+        </span>
+        <span class="input-box">
+            <label>Confirm Password:</label>
+            <input id="reg-pw-confirm-input" type="password" >
+            <p class="error-text" id="conf-pw-error">The passwords are not the same.</p>
+        </span>
+    </div>
+    <button class="main-btns" onclick="registerBtn()">Register</button>
+</main>
+<!-- ------------------------------------------------------------------------------------------------ -->
+<main id="welcome-page">
+    <span>
+        <h3>Welcome </h3>
+        <h3 id="userName"></h3>
+        <h3>:)</h3>
+    </span>
+    <button class="simple-btns" onclick="toLoginPage()">Back to login page</button>
+</main>
+</body>
+</html>
